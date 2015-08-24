@@ -9,7 +9,7 @@ This is a wordpress plugin that creates a widget on the WordPress dashboard.  It
 
 ### How do I get set up? ###
 
-* Place ITMK_WP_ADVERT.php in the plugins directory.
+* Place ITMK_WP_ADVERT.php in the plugins directory OR install the plugin using the zip archive.
 * Place ITMK_WP_ADVERT_CONTENT.php in the remote server.
 * In ITMK_WP_ADVERT.php, change the remote URL to the proper URL pointing to whereever the content is located.
 
