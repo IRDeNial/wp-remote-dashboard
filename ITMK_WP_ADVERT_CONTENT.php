@@ -1,2 +1,1 @@
-<a href="#" style="font-size:28px;font-weight:bold;">WP Protectors</a>
-<p>Don't leave your website unprotected.  Let us help.</p>
+<p>Put content that you want displayed here.  This will show for anyone who has the plugin installed.</p>
