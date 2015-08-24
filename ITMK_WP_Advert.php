@@ -20,14 +20,25 @@
 
 	class ITMK_DASHBOARD_WIDGET {
 		// Widget slug for internal use
-    	const wid = 'itmk_widget';
+    		const wid = 'itmk_widget';
 		
 		// Remote URL for widget content
 		const remote = 'http://intouch-marketing.com/ITMK_WP_ADVERT_CONTENT.php';
 
-	    public static function init() {
+		// Dashboard Title
+		const title = 'InTouch Marketing News';
+
+		public static function init() {
 			// Create the widget...
-			wp_add_dashboard_widget(self::wid,__( 'InTouch Marketing News', 'nouveau' ),array('ITMK_DASHBOARD_WIDGET','widget'));
+			wp_add_dashboard_widget(self::wid,self::title,array('ITMK_DASHBOARD_WIDGET','widget'));
+	
+			// Move ITMK to top.
+			global $wp_meta_boxes;
+			$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+			$backup = array('ITMK_DASHBOARD_WIDGET' => $normal_dashboard['ITMK_DASHBOARD_WIDGET']);
+			unset($normal_dashboard['ITMK_DASHBOARD_WIDGET']);
+			$sorted_dashboard = array_merge($backup,$normal_dashboard);
+			$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
 		}
 		
 		public static function widget() {
